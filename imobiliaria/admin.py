@@ -4,11 +4,11 @@ from nested_inline.admin import NestedTabularInline, NestedModelAdmin
 
 
 
-class FotosInline(NestedTabularInline):
+class FotosInline(admin.TabularInline):
     model = Fotos
     extra = 0
 
-class ImovelAdmin(NestedModelAdmin):
+class ImovelAdmin(admin.ModelAdmin):
     inlines = [FotosInline]
 
 
