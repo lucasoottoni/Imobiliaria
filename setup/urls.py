@@ -16,6 +16,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import routers, serializers, viewsets
+from imobiliaria import views
+from django.conf.urls.static import static
+from django.conf import settings
+
+from setup.settings import MEDIA_ROOT
+
+
+router = routers.DefaultRouter()
+router.register('users', views.UserViewSet)
+router.register('groups', views.GroupViewSet)
+router.register('imoveis', views.ImoveisViewSet)
+router.register('categorias', views.CategoriasViewSet)
+router.register('tiposImoveis', views.TipoImovelViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    #path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include(router.urls) ),
+
+
+] + static(settings.MEDIA_URL, document_root=MEDIA_ROOT)
+
