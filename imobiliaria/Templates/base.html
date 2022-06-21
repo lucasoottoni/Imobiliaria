@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <!--####################################################CSS CSS CSS #########################################################-->
+    <!------------------------------------------------------Bootstrap------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Font awesone-->
+
+
+
+
+    {% block css %}
+
+    {% endblock %}
+    <!--##########################################################################################################################-->
+
+</head>
+<body>
+
+
+{% block navbar %}
+	<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+	    <div class="container-fluid">
+    {% endblock %}
+		    <a class="navbar-brand" href="#" style="font-family: Lora">Imobiliaria X</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+		        <ul class="navbar-nav mr-auto ">
+			        <li class="nav-item">
+			            <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-home"></i> Home</a>
+			        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-users"></i> Pessoas
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" >
+                            <li><a class="dropdown-item" href="/pessoasf_index">Pessoas Físicas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/pessoasj_index">Pessoas Jurídica</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-folder-closed"></i> Processos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown2" >
+                            <li><a class="dropdown-item" href="/pessoasj_index">Visualizar</a></li>
+                            <li><a class="dropdown-item" href="#">Adicionar / Editar</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Painel de controle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/"><i class="fa-solid fa-gear"></i> Administração</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/usuarios/"><i class="fa-solid fa-users"></i> Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-user-pen"></i> {{ user.get_username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fa-solid fa-person-walking-arrow-right"></i> Sair</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#atuacao"><i class="fa-solid fa-user-lock"></i> Áreas de atuação </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato"><i class="fa-solid fa-user-lock"></i> Contato </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipe"><i class="fa-solid fa-id-card"></i> Profissionais </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fa-solid fa-user-lock"></i> Acessar </a>
+                    </li>
+		        </ul>
+           </div>
+	    </div>
+	</nav>
+
+
+{% block body %}
+{% endblock %}
+
+
+<!--------------------------------------------------------------Bootstrap------------------------------------------------------------------->
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
+{% block js %}
+{% endblock %}
+
+
+</body>
+
+</html>

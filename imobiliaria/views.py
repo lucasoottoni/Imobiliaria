@@ -22,6 +22,11 @@ def login(request):
             token = Token.objects.get_or_create(user=user)
             return JsonResponse(  {'token': token[0].key, 'id': user.id, 'usuario': user.username, 'email': user.email, 'nome': user.first_name} )
 
+
+
+def index(request):
+    return render(request, 'index.html', {})
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
