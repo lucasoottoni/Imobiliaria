@@ -25,7 +25,9 @@ def login(request):
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    fazendas = Imovel.objects.all()
+    print(request.build_absolute_uri())
+    return render(request, 'index.html', {'fazendas': fazendas})
 
 class UserViewSet(viewsets.ModelViewSet):
     """

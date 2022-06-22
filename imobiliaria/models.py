@@ -1,5 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf.urls.static import static
+from django.conf import settings
+
+from setup.settings import MEDIA_ROOT
+
 
 
 class Categoria(models.Model):
@@ -36,8 +41,16 @@ class Imovel(models.Model):
     descricao = models.TextField(help_text="Descrição do imovel.")
     status = models.BooleanField(default=True, verbose_name="Ativo")
 
+    def fotoCapa(self):
+        fotos = Fotos.objects.filter(imovel_id=self.id)
+        print()
+        print("A foto é: ",fotos[0].foto)
+        return fotos[0].foto
     def fotos(self):
-        return Fotos.objects.filter(imovel_id=self.id)
+        fotos = Fotos.objects.filter(imovel_id=self.id)
+        ignorar = fotos[0].id
+        fotos = fotos.exclude(id=ignorar)
+        return fotos
 
     def __str__(self):
         return self.nome
@@ -50,7 +63,7 @@ class Imovel(models.Model):
 class Fotos(models.Model):
     id = models.AutoField(primary_key=True)
     imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE)
-    foto = models.ImageField(upload_to="media/fotos/%Y/%m/%d", verbose_name="Foto", help_text="Escolha uma foto.", blank=True)
+    foto = models.ImageField(upload_to="fotosImoveis/%Y-%m-%d", verbose_name="Foto", help_text="Escolha uma foto.", blank=True)
     #foto = models.ImageField(blank=True)
     descricao = models.TextField(verbose_name="Descrição", help_text="Descrição", blank=True)
 
