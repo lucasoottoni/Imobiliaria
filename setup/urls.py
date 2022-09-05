@@ -32,6 +32,8 @@ router.register('groups', views.GroupViewSet)
 router.register('imoveis', views.ImoveisViewSet)
 router.register('categorias', views.CategoriasViewSet)
 router.register('tiposImoveis', views.TipoImovelViewSet)
+router.register('fotosImovel', views.FotosImovelViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from imobiliaria.models import Imovel, TipoImovel, Categoria
+from imobiliaria.models import Fotos, Imovel, TipoImovel, Categoria
 from rest_framework import permissions, authentication, viewsets
-from imobiliaria.serializers import UserSerializer, GroupSerializer, ImoveisSerializer, TipoImovelSerializer, CategoriaSerializer
+from imobiliaria.serializers import FotosImoveisSerializer, UserSerializer, GroupSerializer, ImoveisSerializer, TipoImovelSerializer, CategoriaSerializer
 
 
 from django.contrib.auth import authenticate
@@ -65,4 +65,9 @@ class CategoriasViewSet(viewsets.ModelViewSet):
 class TipoImovelViewSet(viewsets.ModelViewSet):
     queryset = TipoImovel.objects.all()
     serializer_class = TipoImovelSerializer
+    authentication_classes = (authentication.TokenAuthentication,)
+    
+class FotosImovelViewSet(viewsets.ModelViewSet):
+    queryset = Fotos.objects.all()
+    serializer_class = FotosImoveisSerializer
     authentication_classes = (authentication.TokenAuthentication,)
