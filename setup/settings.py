@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -113,6 +115,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_URL = 'static/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -124,3 +128,12 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django_base_url.context_processors.base_url",
+)
+
+BASE_URL = "http://host/"
+
+django_heroku.settings(locals())

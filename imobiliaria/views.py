@@ -29,6 +29,12 @@ def index(request):
     print(request.build_absolute_uri())
     return render(request, 'index.html', {'fazendas': fazendas})
 
+
+def index2(request): 
+    fazendas = Imovel.objects.all()
+    print('Olha o print ai', request.build_absolute_uri())
+    return render(request, 'index2.html', {'fazendas': fazendas})
+    
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

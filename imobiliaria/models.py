@@ -50,6 +50,7 @@ class Imovel(models.Model):
         fotos = Fotos.objects.filter(imovel_id=self.id)
         ignorar = fotos[0].id
         fotos = fotos.exclude(id=ignorar)
+        print('Fotos são: ',fotos)
         return fotos
 
     def __str__(self):

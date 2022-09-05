@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- CSS do Art -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="container-fluid">
+        <header class="row" id="header">
+            <div id="logo-container">
+                <img src="{% static 'img/bannerJOF.png' %}" alt="Art" id="logo">
+            </div>
+            <!--<p>Imóveis rurais à venda</p>-->
+        </header>
+
+        <nav class="container" id="navbar">
+            <div class="row justify-content-center">
+                <ul class="lista">
+                    <li><a>Home</a></li>
+                    <li><a>Fazendas</a></li>
+                    <li><a>Sobre</a></li>
+                    <li><a>Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--  HEADER  FIM -->
+
+        <!-- MAIN IMAGE -->
+        <div class="container" id="main-image-container">
+            <div class="main-image center-image">
+                <div class="main-image-info">
+                    <h4>Encontre aqui sua futura propriedade rural</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--MAIN IMAGE FIM-->
+
+
+
+          <!-- GALERY -->
+    <div class="container" id="gallery-container">
+        <div class="col-12">
+            <h1>Fazendas em destaque:</h1>
+        </div>
+    <div class="row gx-5">
+               
+            
+            
+        {%for f in fazendas %} 
+            <div class="col-12 col-md-6">
+                <div id="carouselExampleSlidesOnly" class="carousel slide small-image-container center-image" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img" src="{% static 'img/fazenda1.jpeg' %}" alt="First slide">
+                        </div>
+                        {%for fotos in f.fotos%}
+                            <div class="carousel-item">
+                                <img class="d-block w-100 img" src="{{ BASE_URL }}media/{{fotos.foto}}" alt="Second slide">
+                            </div>
+                        {%endfor%}
+                    </div>
+                </div>
+                                 <!--<img src="img/fazenda1.jpeg" class="img" >-->
+                <h3>Fazenda São João</h3>
+                <p class="secondary-color">Realizada em: 26/01/2018</p>
+                <a href="https://wa.me/5567999446383?&text=Olá,%20gostaria%20de%20saber%20sobre%20a%20fazenda%20{{f.nome}}" class="btn">Detalhes</a>
+            </div>
+        {% endfor %}
+
+
+        
+    </div>
+
+    <!-- Gallery FIM-->
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="secondary-color">Nos encontre nas redes sociais:</p>
+            <div class="row justify-content-center" id="social-icons-container">
+                <div class="col-1">
+                    <a href="#"><i class="bi bi-facebook secondary-color"></i></a>
+                </div>
+                <div class="col-1">
+                    <a href="#"><i class="bi bi-instagram secondary-color"></i></a>
+                </div>
+                <div class="col-1">
+                    <a href="#"><i class="bi bi-twitter secondary-color"></i></a>
+                </div>
+                <div class="col-1">
+                    <a href="#"><i class="bi bi-whatsapp secondary-color"></i></a>
+                </div>
+            </div>
+            <p class="secondary-color">Art &copy; 2022</p>
+        </footer>
+
+</body>
+</html>

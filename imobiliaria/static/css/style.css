@@ -1,0 +1,194 @@
+/*Estilos gerais*/
+
+
+body {
+
+    /*background-color: #063d2f;*/
+
+}
+
+* {
+    color: #25282b;
+    
+}
+
+a, i {
+    transition: .5s;
+    text-decoration: none;
+}
+
+.secondary-color {
+    color: #555;
+}
+
+.center-image {
+    background-size: cover;
+    background-position: center;
+}
+
+.btn{
+    text-decoration: none;
+    background-color: #25282E;
+    color: #fff;
+    padding: 7px 18px;
+    border-radius: 0;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* HEADER */
+#header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #CCC;
+}
+
+#header p {
+    margin-bottom: 0;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#logo {
+    width: 600px;
+}
+
+
+/* NAVBAR */
+#navbar {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+#navbar a {
+    width: 80px;
+    color:white;
+    color: #444;
+
+    /*color: #444;*/
+    text-align: center;
+        cursor: pointer;
+
+}
+
+#navbar a:hover{
+    color: #c1b696;
+}
+
+
+.lista {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.lista li{
+    list-style: none;
+    margin: 10px;
+    
+}
+
+
+/* MAIN IMAGE */
+.main-image{
+    height: 500px;
+    background-image: url('../img/imagens_rurais.jpg');
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.main-image-info{
+    background-color: whitesmoke;
+    padding: 25px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+.main-image-info h4{
+    color: black;
+}
+
+
+/* GALERY */
+              /*  #img-2{
+                    background-image: url('../img/g_2.jpg');
+                } */
+
+.img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    object-fit:cover;
+}
+#img-3{
+    background-image: url('../img/fazenda2.jpeg');
+}
+#img-4{
+    background-image: url('../img/fazenda3.jpeg');
+}
+#img-5{
+    background-image: url('../img/fazenda4.jpeg');
+}
+
+#gallery-container h1,
+#gallery-container .col-md-6,
+#gallery-container .col-12 {
+    margin-bottom: 50px;
+
+}
+
+.small-image-container {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.botao {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #CCC;
+    height: 250px;
+    padding: 30px;
+}
+
+footer i {
+    font-size: 20px;
+}
+
+#social-icons-container {
+    padding: 25px;
+}
+#social-icons-container div {
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+    margin: 20px;
+}
+
+a:hover i {
+    color: #c1b696;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+.carousel-item {
+    height: 100%;
+}
+.carousel-inner {
+    height: 100%;
+}
+
+
