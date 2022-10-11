@@ -21,9 +21,14 @@ class FotosImoveisSerializer(serializers.ModelSerializer):
         model = Fotos
         fields = ['id', 'imovel', 'descricao', 'foto']
 
+class CategoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ['id', 'nome', 'status']
+
 class ImoveisSerializer(serializers.ModelSerializer):
     fotos = FotosImoveisSerializer(many=True, read_only=False, required=False)
-
+    categoria = CategoriaSerializer()
     class Meta:
         model = Imovel
         fields = ['id', 'nome', 'descricao', 'fotos', 'categoria', 'tipoImovel']
@@ -33,7 +38,3 @@ class TipoImovelSerializer(serializers.ModelSerializer):
         model = TipoImovel
         fields = ['id', 'nome', 'status']
 
-class CategoriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ['id', 'nome', 'status']

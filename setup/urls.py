@@ -22,6 +22,7 @@ from rest_framework import routers, serializers, viewsets
 from imobiliaria import views
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from setup.settings import MEDIA_ROOT
 
@@ -38,6 +39,8 @@ router.register('fotosImovel', views.FotosImovelViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('token/', TokenObtainPairView.as_view()),
+    path('token/', TokenRefreshView.as_view()),
     path('api/', include(router.urls)),
     path('', views.index),
     path('teste', views.index2)

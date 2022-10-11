@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from imobiliaria.models import Fotos, Imovel, TipoImovel, Categoria
 from rest_framework import permissions, authentication, viewsets
+from rest_framework.permissions import IsAuthenticated
 from imobiliaria.serializers import FotosImoveisSerializer, UserSerializer, GroupSerializer, ImoveisSerializer, TipoImovelSerializer, CategoriaSerializer
 
 
@@ -10,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.models import Token
 from django.http import JsonResponse
 import json
+
 
 @csrf_exempt
 def login(request):
@@ -58,16 +60,19 @@ class ImoveisViewSet(viewsets.ModelViewSet):
     #authentication_classes = (authentication.TokenAuthentication,)
 
 class CategoriasViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
 
 class TipoImovelViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     queryset = TipoImovel.objects.all()
     serializer_class = TipoImovelSerializer
     authentication_classes = (authentication.TokenAuthentication,)
     
 class FotosImovelViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     queryset = Fotos.objects.all()
     serializer_class = FotosImoveisSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
