@@ -28,10 +28,11 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 class ImoveisSerializer(serializers.ModelSerializer):
     fotos = FotosImoveisSerializer(many=True, read_only=False, required=False)
-    categoria = CategoriaSerializer()
+    #categoria = CategoriaSerializer()
     class Meta:
         model = Imovel
-        fields = ['id', 'nome', 'descricao', 'fotos', 'categoria', 'tipoImovel']
+        fields = ['id', 'nome', 'descricao', 'fotos', 'categoria',
+                  'categoria_nome', 'tipoImovel']
 
 class TipoImovelSerializer(serializers.ModelSerializer):
     class Meta:

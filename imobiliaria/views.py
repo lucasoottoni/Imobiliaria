@@ -72,7 +72,7 @@ class TipoImovelViewSet(viewsets.ModelViewSet):
     #authentication_classes = (authentication.TokenAuthentication,)
     
 class FotosImovelViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     queryset = Fotos.objects.all()
     serializer_class = FotosImoveisSerializer
     #authentication_classes = (authentication.TokenAuthentication,)

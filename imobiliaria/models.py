@@ -52,6 +52,9 @@ class Imovel(models.Model):
         fotos = fotos.exclude(id=ignorar)
         print('Fotos são: ',fotos)
         return fotos
+    @property
+    def categoria_nome(self):
+        return self.categoria.nome
     
 
     def __str__(self):
