@@ -44,14 +44,20 @@ class Imovel(models.Model):
     def fotoCapa(self):
         fotos = Fotos.objects.filter(imovel_id=self.id)
         print()
-        print("A foto é: ",fotos[0].foto)
-        return fotos[0].foto
+        if len(fotos) > 0:
+            print("A foto é: ",fotos[0].foto)
+            return fotos[0].foto
+        else:
+            return ''
     def fotos(self):
         fotos = Fotos.objects.filter(imovel_id=self.id)
-        ignorar = fotos[0].id
-        fotos = fotos.exclude(id=ignorar)
-        print('Fotos são: ',fotos)
-        return fotos
+        if len(fotos)>0:
+            ignorar = fotos[0].id
+            fotos = fotos.exclude(id=ignorar)
+            print('Fotos são: ',fotos)
+            return fotos
+        else:
+            return ''
     @property
     def categoria_nome(self):
         return self.categoria.nome
