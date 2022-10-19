@@ -19,7 +19,7 @@ class GroupSerializer(serializers.ModelSerializer):
 class FotosImoveisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fotos
-        fields = ['id', 'imovel', 'descricao', 'foto']
+        fields = ['id', 'imovel', 'descricao', 'foto', 'url']
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:

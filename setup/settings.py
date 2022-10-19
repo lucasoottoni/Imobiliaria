@@ -157,7 +157,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django_base_url.context_processors.base_url",
 )
 
-BASE_URL = "http://host/"
+BASE_URL = "http://127.0.0.1:8000/"
 
 ALLOWED_HOSTS=['*']
 CORS_ORIGIN_ALLOW_ALL = True

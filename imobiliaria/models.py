@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.conf.urls.static import static
 from django.conf import settings
 
-from setup.settings import MEDIA_ROOT
+from setup.settings import BASE_DIR, BASE_URL, MEDIA_ROOT, MEDIA_URL
 
 
 
@@ -80,7 +80,10 @@ class Fotos(models.Model):
 
     #def __str__(self):
     #    return "%s - %s" % (self.imovel.nome, self.descricao)
-
+    @property
+    def url(self):
+        
+        return str(BASE_URL+'media/')+ str(self.foto)
     class Meta:
         managed = True
         db_table = 'tab_fotosImoveis'
