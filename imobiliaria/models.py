@@ -82,8 +82,10 @@ class Fotos(models.Model):
     #    return "%s - %s" % (self.imovel.nome, self.descricao)
     @property
     def url(self):
-        
+        print("FOTO: ",self.foto)
+
         return str(BASE_URL+'media/')+ str(self.foto)
+        #return self.foto
     class Meta:
         managed = True
         db_table = 'tab_fotosImoveis'

@@ -3,6 +3,8 @@ from django.contrib.auth.models import User, Group
 from imobiliaria.models import Fotos, Imovel, TipoImovel, Categoria
 from rest_framework import permissions, authentication, viewsets
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view
+from imobiliaria.paginationImoveis import CustomImoveisResultsSetPagination
 from imobiliaria.serializers import FotosImoveisSerializer, UserSerializer, GroupSerializer, ImoveisSerializer, TipoImovelSerializer, CategoriaSerializer
 
 
@@ -57,6 +59,7 @@ class GroupViewSet(viewsets.ModelViewSet):
 class ImoveisViewSet(viewsets.ModelViewSet):
     queryset = Imovel.objects.all()
     serializer_class = ImoveisSerializer
+    pagination_class = CustomImoveisResultsSetPagination
     #authentication_classes = (authentication.TokenAuthentication,)
 
 class CategoriasViewSet(viewsets.ModelViewSet):
@@ -64,6 +67,7 @@ class CategoriasViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
+
 
 class TipoImovelViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
