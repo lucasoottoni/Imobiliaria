@@ -51,13 +51,13 @@ class Imovel(models.Model):
             return ''
     def fotos(self):
         fotos = Fotos.objects.filter(imovel_id=self.id)
-        if len(fotos)>0:
-            ignorar = fotos[0].id
-            fotos = fotos.exclude(id=ignorar)
+        #if len(fotos)>0:
+        #    ignorar = fotos[0].id
+        #    fotos = fotos.exclude(id=ignorar)
             #print('Fotos são: ',fotos)
-            return fotos
-        else:
-            return ''
+        return fotos
+        #else:
+        #    return ''
     @property
     def categoria_nome(self):
         return self.categoria.nome
