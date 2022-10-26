@@ -54,7 +54,7 @@ class Imovel(models.Model):
         if len(fotos)>0:
             ignorar = fotos[0].id
             fotos = fotos.exclude(id=ignorar)
-            print('Fotos são: ',fotos)
+            #print('Fotos são: ',fotos)
             return fotos
         else:
             return ''
@@ -82,7 +82,7 @@ class Fotos(models.Model):
     #    return "%s - %s" % (self.imovel.nome, self.descricao)
     @property
     def url(self):
-        print("FOTO: ",self.foto)
+        #print("FOTO: ",self.foto)
 
         return str(BASE_URL+'media/')+ str(self.foto)
         #return self.foto
