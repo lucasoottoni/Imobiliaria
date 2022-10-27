@@ -148,3 +148,9 @@ __pycache__*
 imobiliaria\__pycache__\*
 imobiliaria\__pycache__\__init__.cpython-310.pyc
 __pycache__/
+imobiliaria/__pycache__/__init__.cpython-310.pyc
+imobiliaria/__pycache__/__init__.cpython-310.pyc
+imobiliaria/__pycache__/admin.cpython-310.pyc
+imobiliaria/__pycache__/
+imobiliaria/__pycache__/**
+*.pyc
