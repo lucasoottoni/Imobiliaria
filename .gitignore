@@ -5,6 +5,11 @@ venv
 *.pot
 *.pyc
 __pycache__
+setup/__pycache__
+setup\__pycache__
+
+.setup/__pycache__
+
 db.sqlite3
 media
 
@@ -142,3 +147,4 @@ GitHub.sublime-settings
 __pycache__*
 imobiliaria\__pycache__\*
 imobiliaria\__pycache__\__init__.cpython-310.pyc
+__pycache__/

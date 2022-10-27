@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 from django.contrib.auth.models import User, Group
 from imobiliaria.models import Imovel, Fotos, Categoria, TipoImovel
 from rest_framework import serializers
@@ -34,7 +34,7 @@ class ImoveisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imovel
         fields = ['id', 'nome', 'descricao', 'fotos', 'categoria',
-                  'categoria_nome', 'tipoImovel']
+                  'categoria_nome', 'tipoImovel', 'status']
         methods = ['get', 'put', 'delete']
 
 class TipoImovelSerializer(serializers.ModelSerializer):
