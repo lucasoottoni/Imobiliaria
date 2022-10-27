@@ -137,3 +137,8 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+\__pycache__
+*__pycache__
+__pycache__*
+imobiliaria\__pycache__\*
+imobiliaria\__pycache__\__init__.cpython-310.pyc
