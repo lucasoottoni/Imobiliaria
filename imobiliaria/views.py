@@ -68,15 +68,29 @@ class CategoriasViewSet(viewsets.ModelViewSet):
     serializer_class = CategoriaSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
 
+class GetAllCategoriasViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+    pagination_class = None
+    #authentication_classes = (authentication.TokenAuthentication,)
+
 
 class TipoImovelViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     queryset = TipoImovel.objects.all()
     serializer_class = TipoImovelSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
+
+class GetAllTipoImovelViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
+    queryset = TipoImovel.objects.all()
+    serializer_class = TipoImovelSerializer
+    pagination_class = None
     
 class FotosImovelViewSet(viewsets.ModelViewSet):
     #permission_classes = (IsAuthenticated,)
     queryset = Fotos.objects.all()
     serializer_class = FotosImoveisSerializer
     #authentication_classes = (authentication.TokenAuthentication,)
+

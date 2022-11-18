@@ -22,3 +22,38 @@ server {
         include     /root/imobiliaria/uwsgi_params; 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======
+[Unit]
+Description=Django VPS uWSGI Emperor
+After=syslog.target
+
+[Service]
+ExecStart=/home/lucas/venv/bin/uwsgi --emperor /etc/uwsgi/vassals --uid www-data --gid www-data
+RuntimeDirectory=uwsgi
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+User=lucas
+
+[Install]
+WantedBy=multi-user.target
+======

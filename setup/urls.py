@@ -32,7 +32,9 @@ router.register('users', views.UserViewSet)
 router.register('groups', views.GroupViewSet)
 router.register('imoveis', views.ImoveisViewSet)
 router.register('categorias', views.CategoriasViewSet)
+router.register('categoriasGetAll', views.GetAllCategoriasViewSet)
 router.register('tiposImoveis', views.TipoImovelViewSet)
+router.register('tiposImoveisGetAll', views.GetAllTipoImovelViewSet)
 router.register('fotosImovel', views.FotosImovelViewSet)
 
 

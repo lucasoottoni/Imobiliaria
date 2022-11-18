@@ -154,3 +154,10 @@ imobiliaria/__pycache__/admin.cpython-310.pyc
 imobiliaria/__pycache__/
 imobiliaria/__pycache__/**
 *.pyc
+*.sqlite3
+*.pyc
+imobiliaria/__pycache__/admin.cpython-310.pyc
+teste
+*.pyc
+*.pyc
+db.sqlite3
